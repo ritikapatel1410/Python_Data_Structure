@@ -38,6 +38,6 @@ def main():
     new_key=2
     print("============================ Occurance of element is here =========================================")
     print("dictionary {0} after added new key : {1}".format(old_dictionary,add_key(dictionary,new_key)))
-    loggerfile.Logger("debug","sorted dictionary by value")
+    loggerfile.Logger("debug","new key added successfully")
 
 main()   

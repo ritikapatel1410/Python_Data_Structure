@@ -37,5 +37,6 @@ def main():
     type_array=array("i",[1,2,3,4,5,6])
     print("============================ Reversed Array Here=========================================")
     print("{0} array of revesed array is : {1}".format(type_array,reverse_array(type_array)))
+    loggerfile.Logger("debug","get reverse array successfully")
 
 main()    

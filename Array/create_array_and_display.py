@@ -5,13 +5,14 @@
  @Last Modified time: 2021-02-18 12:15:38  
  @Title : create an array of integers and display the array items problem
 '''
+from array import *
 #import module
 import sys
 import os
 sys.path.insert(0, os.path.abspath('LogFile'))
 #import logger file
 import loggerfile 
-def create_array(element):
+def create_array_type(element):
     """
     Description:
         this function define for create an array
@@ -20,8 +21,8 @@ def create_array(element):
     Return:
         created_list (list) : return created list
     """
-    create_list.append(element)
-    return create_list
+    create_array.append(element)
+    return create_array
 
 def show_array(create_list):
     """
@@ -45,21 +46,21 @@ def main():
     Return:
         None
     """ 
-    global create_list
-    create_list=[]   
+    global create_array
+    create_array=array('i',[])  
     for integer in range(5):
         while True:
             try:
                 element=int(input("=========================================================\nenter element of array for {0} index integer only: ".format(integer)))
                 #call create function here
-                create_array(element)
+                create_array_type(element)
                 break
             except ValueError as error:
                 loggerfile.Logger("error","{0} occured".format(error))
 
     print("==================================== show elment of array here ==============================")
     #call show array function here
-    show_array(create_list)
+    show_array(create_array)
     loggerfile.Logger("debug","code working as excepted")
 
 #main function

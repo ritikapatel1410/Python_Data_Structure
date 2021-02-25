@@ -40,6 +40,6 @@ def main():
     """
     dictionary = [{'id': 1, 'success': True, 'name': 'Lary'}, {'id': 2, 'success':False, 'name': 'Rabi'}, {'id': 3, 'success': True, 'name': 'Alex'}]
     print("=============================== success == True count here =====================\n success == True count : {0}".format(check_dict(dictionary)))
-    loggerfile.Logger("info","print dictionary into table form successfully")
+    loggerfile.Logger("info","count success==true successfully")
     print("====================================================================================================")
 main()   

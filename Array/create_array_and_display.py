@@ -12,6 +12,7 @@ import os
 sys.path.insert(0, os.path.abspath('LogFile'))
 #import logger file
 import loggerfile 
+
 def create_array_type(element):
     """
     Description:
@@ -52,16 +53,14 @@ def main():
         while True:
             try:
                 element=int(input("=========================================================\nenter element of array for {0} index integer only: ".format(integer)))
-                #call create function here
                 create_array_type(element)
                 break
             except ValueError as error:
                 loggerfile.Logger("error","{0} occured".format(error))
 
     print("==================================== show elment of array here ==============================")
-    #call show array function here
     show_array(create_array)
-    loggerfile.Logger("debug","code working as excepted")
+    loggerfile.Logger("info","code working as excepted")
 
 #main function
 main()

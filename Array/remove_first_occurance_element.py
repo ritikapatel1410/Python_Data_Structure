@@ -39,6 +39,6 @@ def main():
     before_remove_element=array('i',[1,2,2,4,3,4,4,5,6])
     element=4
     print("============================ Occurance of element is here =========================================")
-    print("{0} after remove element {1} is : {2} ".format(before_remove_element,element,remove_element(type_array,element)))
-    loggerfile.Logger("debug","remove element successfully")
+    print("{0} after remove element {1} is : {2} ".format(list(before_remove_element),element,list(remove_element(type_array,element))))
+    loggerfile.Logger("info","remove element successfully")
 main()   

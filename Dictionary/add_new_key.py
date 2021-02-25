@@ -5,14 +5,12 @@
  @Last Modified time: 2021-02-18 00:42:38  
  @Title : add new key to dictionary
 '''
-#import module
 import sys
 import os
 sys.path.insert(0, os.path.abspath('LogFile'))
-#import logger file
 import loggerfile 
 
-def add_key(dictionary,new_key):
+def add_key(dictionary,key,value):
     """
     Description:
         this function is define for add new key into dictionary
@@ -21,7 +19,7 @@ def add_key(dictionary,new_key):
     Return:
         updated dictionary
     """
-    dictionary[new_key]=30
+    dictionary[key]=value
     return dictionary
 
 def main():
@@ -35,9 +33,10 @@ def main():
     """
     old_dictionary={0: 10, 1: 20}
     dictionary={0: 10, 1: 20}
-    new_key=2
+    key=input("enter key : ")
+    value=input("enter value : ")
     print("============================ Occurance of element is here =========================================")
-    print("dictionary {0} after added new key : {1}".format(old_dictionary,add_key(dictionary,new_key)))
-    loggerfile.Logger("debug","new key added successfully")
+    print("dictionary {0} after added new key : {1}".format(old_dictionary,add_key(dictionary,key,value)))
+    loggerfile.Logger("info","new key added successfully")
 
 main()   

@@ -6,11 +6,9 @@
  @Title : reverse array problem
 '''
 from array import *
-#import module
 import sys
 import os
 sys.path.insert(0, os.path.abspath('LogFile'))
-#import logger file
 import loggerfile 
 
 def reverse_array(type_array):
@@ -36,7 +34,7 @@ def main():
     
     type_array=array("i",[1,2,3,4,5,6])
     print("============================ Reversed Array Here=========================================")
-    print("{0} array of revesed array is : {1}".format(type_array,reverse_array(type_array)))
-    loggerfile.Logger("debug","get reverse array successfully")
+    print("{0} array of revesed array is : {1}".format(list(type_array),list(reverse_array(type_array))))
+    loggerfile.Logger("info","get reverse array successfully")
 
 main()    

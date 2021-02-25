@@ -6,3 +6,5 @@
 *.log
 #ignore __init__.py
 *__init__.py
+#ignore custom_exception folder
+**/custom_exception/

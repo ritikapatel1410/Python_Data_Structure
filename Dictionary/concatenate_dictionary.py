@@ -5,17 +5,16 @@
  @Last Modified time: 2021-02-18 00:52:38  
  @Title : concatenate dictionary problem
 '''
-#import module
+
 import sys
 import os
 sys.path.insert(0, os.path.abspath('LogFile'))
-#import logger file
 import loggerfile 
 
 def concatenate_dictionary(dic1,dic2,dic3):
     """
     Description:
-        this function is define for concatenate dictionary
+        this function is define for concatenate dictionaryDictionary/LogFile
     Parameter:
         dic1 (dict) : user defind dictionary
         dic2 (dict) : user defind dictionary
@@ -43,6 +42,6 @@ def main():
     dic3={5:50,6:60}
     print("============================ Occurance of element is here =========================================")
     print("dictionary {0} {1} {2} after concatenate dictionary : {3}".format(dic1,dic2,dic3,concatenate_dictionary(dic1,dic2,dic3)))
-    loggerfile.Logger("debug","successfully concatenate dictionary")
+    loggerfile.Logger("info","successfully concatenate dictionary")
 
 main()   

@@ -38,7 +38,7 @@ def main():
     type_array=array("i",[1,2,2,4,3,4,4,5,6])
     element=4
     print("============================ Occurance of element is here =========================================")
-    print("occurence of {0} in {1} is : {2}".format(element,type_array,occurance_element(type_array,element)))
-    loggerfile.Logger("debug","get occurance of element successfully")
+    print("occurence of {0} in {1} is : {2}".format(element,list(type_array),occurance_element(type_array,element)))
+    loggerfile.Logger("info","get occurance of element successfully")
 
 main()   

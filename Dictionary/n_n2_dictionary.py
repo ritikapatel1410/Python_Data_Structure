@@ -40,5 +40,7 @@ def main():
         loggerfile.Logger("info","successfully dictionary created")
     except ValueError as error:
         loggerfile.Logger("error","{0} occured".format(error))
+    except Exception:
+        loggerfile.Logger("error","{0} occured".format(error))
 
 main()   

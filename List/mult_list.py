@@ -3,7 +3,7 @@
  @Date: 2021-02-26 17:35:10
  @Last Modified by: Ritika Patidar
  @Last Modified time: 2021-02-26 17:35:38  
- @Title : multiply of list element problem
+ @Title : find smallest number of list
 '''
 import sys
 import os
@@ -13,24 +13,21 @@ import loggerfile
 
 
 
-def mult_list(List):
+def min_list(List):
     """
     Description:
-        this function is define for multiply of element of list
+        this function is define for smallest number of list
     Parameter:
         List (list) : user defined list
     Return:
-        mult (int) : multiply of all element in list
+        minimum value of List
     """
-    mult=1
-    for element in List:
-        mult*=element
-    return mult
+    return min(List)
 
 def main():
     """
     Description:
-        this main function for user defind and call mult_list
+        this main function for user defind and call min_list
     Parameter:
         None
     Return:
@@ -50,7 +47,8 @@ def main():
                         loggerfile.Logger("error","{0} error occured".format(error))
                     except Exception as error:
                         loggerfile.Logger("error","{0} error occured".format(error))
-            print("====================================================\nmultiply all element of list {0} is : {1}".format(List,mult_list(List)))
+            print("====================================================\nmin value of list {0} is : {1}".format(List,min_list(List)))
+            loggerfile.Logger("info","successfully find min value of list")
             break
         except ValueError as error:
             loggerfile.Logger("error","{0} error occured".format(error))

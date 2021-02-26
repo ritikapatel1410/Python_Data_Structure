@@ -31,7 +31,8 @@ def create_dictionary(user_string):
                 raise custom_exception_file.KeyExist
         except custom_exception_file.KeyExist as error:
             loggerfile.Logger("error","{0} occured".format(error))
-
+        except Exception as error:
+            loggerfile.Logger("error","{0} occured".format(error))
     return dictionary
 
 def main():

@@ -21,7 +21,6 @@ def difference_set(set1,set2):
         set3 (set) : difference of set1,set2
     """
     set3=set1.difference(set2)
-    set4=set2.difference(set1)
     return set3
 
 def main():

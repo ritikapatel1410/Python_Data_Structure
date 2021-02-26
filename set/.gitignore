@@ -1,10 +1,6 @@
-# ignore /LogFile repository
-**/LogFile/
 #ingnore /__pycache repository
 **/__pycache__/
 #ignore log file
 *.log
 #ignore __init__.py
 *__init__.py
-#ignore custom exception directory
-**/custom_exception/

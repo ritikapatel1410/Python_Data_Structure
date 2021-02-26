@@ -57,10 +57,12 @@ def main():
                 break
             except ValueError as error:
                 loggerfile.Logger("error","{0} occured".format(error))
+            except Exception as error:
+                loggerfile.Logger("error","{0} occured".format(error))
+
 
     print("==================================== show elment of array here ==============================")
     show_array(create_array)
     loggerfile.Logger("info","code working as excepted")
 
-#main function
 main()

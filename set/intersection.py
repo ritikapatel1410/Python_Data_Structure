@@ -3,7 +3,7 @@
  @Date: 2021-02-25 23:55:10
  @Last Modified by: Ritika Patidar
  @Last Modified time: 2021-02-25 23:55:38  
- @Title : discard element to the set problem
+ @Title : find intersection of two set problem
 '''
 import sys
 import os

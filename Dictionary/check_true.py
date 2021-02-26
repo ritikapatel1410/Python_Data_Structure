@@ -26,6 +26,8 @@ def check_dict(dictionary):
                 count+=1
         except KeyError as error:
             loggerfile.Logger("error","{0} error occured".format(error))
+        except Exception as error:
+            loggerfile.Logger("error","{0} error occured".format(error))
 
     return count
 

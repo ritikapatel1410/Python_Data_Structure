@@ -36,7 +36,7 @@ def main():
     while True:
         try:
             element=int(input("===================================================================\nenter element: "))
-            print("===========================add element in set =========================\nbefore remove element {0} after remove element {1}".format(old_created_set,remove_element(element,created_set)))
+            print("===========================remove element in set =========================\nbefore remove element {0} after remove element {1}".format(old_created_set,remove_element(element,created_set)))
             print("=========================== program finish here =============================")
             loggerfile.Logger("info","element removed successfully")
             break

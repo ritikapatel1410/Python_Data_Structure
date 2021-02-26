@@ -49,5 +49,6 @@ def main():
             loggerfile.Logger("error","{0} occured".format(error))
         except AssertionError as error:
             loggerfile.Logger("error","{0} occured".format(error))
-
+        except Exception as error:
+            loggerfile.Logger("error","{0} occured".format(error))
 main()   

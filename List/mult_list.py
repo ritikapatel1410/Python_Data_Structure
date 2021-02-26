@@ -3,32 +3,34 @@
  @Date: 2021-02-26 17:35:10
  @Last Modified by: Ritika Patidar
  @Last Modified time: 2021-02-26 17:35:38  
- @Title : find smallest number of list
+ @Title : multiply of list element problem
 '''
 import sys
 import os
 sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 
-def string_list(List):
+
+
+
+def mult_list(List):
     """
     Description:
-        this function is define for find count string which len >=2 and first and last element same of list
+        this function is define for multiply of element of list
     Parameter:
         List (list) : user defined list
     Return:
-        count
+        mult (int) : multiply of all element in list
     """
-    count=0
-    for string in List:
-        if(len(string)>=2 and string[0]==string[-1]):
-            count+=1
-    return count
+    mult=1
+    for element in List:
+        mult*=element
+    return mult
 
 def main():
     """
     Description:
-        this main function for user defind and call string_list
+        this main function for user defind and call mult_list
     Parameter:
         None
     Return:
@@ -40,15 +42,19 @@ def main():
             size_of_list=int(input("===================================================================\nenter size of list: "))
             for element in range(size_of_list):
                 while True:
-                        value=input("enter index {0} element: ".format(element))
+                    try:
+                        value=int(input("enter index {0} element: ".format(element)))
                         List.append(value)
                         break
-            print("====================================================\nlist {0} element statisfied condition is : {1}".format(List,string_list(List)))
-            loggerfile.Logger("info","successfully find min value of list")
+                    except ValueError as error:
+                        loggerfile.Logger("error","{0} error occured".format(error))
+                    except Exception as error:
+                        loggerfile.Logger("error","{0} error occured".format(error))
+            print("====================================================\nmultiply all element of list {0} is : {1}".format(List,mult_list(List)))
             break
         except ValueError as error:
             loggerfile.Logger("error","{0} error occured".format(error))
         except Exception as error:
             loggerfile.Logger("error","{0} error occured".format(error))
 
-main()   
+main()

@@ -17,7 +17,7 @@ def create_set(element):
     Parameter:
         element (int) : user input
     Return:
-        created_set (set) : created array
+        created_set (set) : created set
     """
     created_set.add(element)
     return created_set

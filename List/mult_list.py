@@ -10,9 +10,6 @@ import os
 sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 
-
-
-
 def mult_list(List):
     """
     Description:

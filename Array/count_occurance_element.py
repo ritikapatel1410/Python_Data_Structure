@@ -6,11 +6,9 @@
  @Title : count occurance of element in array problem
 '''
 from array import *
-#import module
 import sys
 import os
 sys.path.insert(0, os.path.abspath('LogFile'))
-#import logger file
 import loggerfile 
 
 def occurance_element(type_array,element):

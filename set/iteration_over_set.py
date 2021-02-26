@@ -43,6 +43,8 @@ def main():
         loggerfile.Logger("info","set iterate successfully")
     except ValueError as error:
         loggerfile.Logger("error","{0} error occured".format(error))
+    except Exception as error:
+        loggerfile.Logger("error","{0} error occured".format(error))
     print("===========================set {0} iterate over here =========================".format(created_set))
     iterate_set(created_set)
     print("=========================== program finish here =============================")

@@ -42,5 +42,6 @@ def main():
             break
         except ValueError as error:
             loggerfile.Logger("error","{0} error occured".format(error))
-
+        except Exception as error:
+            loggerfile.Logger("error","{0} error occured".format(error))
 main()   

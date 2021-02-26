@@ -46,4 +46,6 @@ def main():
             loggerfile.Logger("info","find intersection successfully")
     except custom_exception_file.IntesectionNotPossible:
         loggerfile.Logger("error","intersection not possible")
+    except Exception as error:
+        loggerfile.Logger("error","{0} error occured".format(error))
 main()   

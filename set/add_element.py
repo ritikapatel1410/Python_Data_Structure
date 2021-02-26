@@ -48,5 +48,7 @@ def main():
             loggerfile.Logger("error","{0} error occured".format(error))
         except custom_exception_file.ElementAlreadyExist as error:
             loggerfile.Logger("error","ElementAlreadyExist occured")
+        except Exception as error:
+            loggerfile.Logger("error","{0} error occured".format(error))
 
 main()   

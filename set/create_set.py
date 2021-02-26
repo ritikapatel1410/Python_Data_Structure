@@ -41,6 +41,8 @@ def main():
         loggerfile.Logger("info","set created successfully")
     except ValueError as error:
         loggerfile.Logger("error","{0} error occured".format(error))
+    except Exception as error:
+        loggerfile.Logger("error","{0} error occured".format(error))
     print("============================ created set is here =========================================")
     print("created set : {0}".format(set_formed))
     

@@ -44,5 +44,6 @@ def main():
             loggerfile.Logger("error","{0} error occured".format(error))
         except KeyError as error:
             loggerfile.Logger("error","{0} not exist in error occured".format(error))
-
+        except Exception as error:
+            loggerfile.Logger("error","{0} not exist in error occured".format(error))
 main()   

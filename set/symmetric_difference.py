@@ -3,7 +3,7 @@
  @Date: 2021-02-26 2:55:10
  @Last Modified by: Ritika Patidar
  @Last Modified time: 2021-02-26 2:55:38  
- @Title : find difference of sets
+ @Title : find symmetric difference of sets
 '''
 import sys
 import os

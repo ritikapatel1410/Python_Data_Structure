@@ -10,24 +10,25 @@ import os
 sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 
-
-
-
-def min_list(List):
+def string_list(List):
     """
     Description:
-        this function is define for smallest number of list
+        this function is define for find count string which len >=2 and first and last element same of list
     Parameter:
         List (list) : user defined list
     Return:
-        minimum value of List
+        count
     """
-    return min(List)
+    count=0
+    for string in List:
+        if(len(string)>=2 and string[0]==string[-1]):
+            count+=1
+    return count
 
 def main():
     """
     Description:
-        this main function for user defind and call min_list
+        this main function for user defind and call string_list
     Parameter:
         None
     Return:
@@ -39,15 +40,10 @@ def main():
             size_of_list=int(input("===================================================================\nenter size of list: "))
             for element in range(size_of_list):
                 while True:
-                    try:
-                        value=int(input("enter index {0} element: ".format(element)))
+                        value=input("enter index {0} element: ".format(element))
                         List.append(value)
                         break
-                    except ValueError as error:
-                        loggerfile.Logger("error","{0} error occured".format(error))
-                    except Exception as error:
-                        loggerfile.Logger("error","{0} error occured".format(error))
-            print("====================================================\nmin value of list {0} is : {1}".format(List,min_list(List)))
+            print("====================================================\nlist {0} element statisfied condition is : {1}".format(List,string_list(List)))
             loggerfile.Logger("info","successfully find min value of list")
             break
         except ValueError as error:

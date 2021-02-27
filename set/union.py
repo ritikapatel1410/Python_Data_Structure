@@ -10,18 +10,18 @@ import os
 sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 
-def union_set(set1,set2):
+def union_set(user_defined_set1,user_defined_set2):
     """
     Description:
         this function is define for find union of two sets
     Parameter:
-        set1 (set) : first set
-        set2 (set) : second set
+        user_defined_set1 (set) : first set
+        user_defined_set2 (set) : second set
     Return:
-        set3 (set) : union of set1,set2
+        union_set (set) : union of user_defined_set1,user_defined_set2
     """
-    set3=set1.union(set2)
-    return set3
+    union_set=user_defined_set1.union(user_defined_set2)
+    return union_set
 
 def main():
     """
@@ -32,10 +32,10 @@ def main():
     Return:
         None
     """
-    set1={0,1,2,3}
-    set2={0,1,2,7,8,9}
+    user_defined_set1={0,1,2,3}
+    user_defined_set2={0,1,2,7,8,9}
 
-    print("=========================== union of sets =========================\n set1 {0} set2 {1} union of sets {2}".format(set1,set2,union_set(set1,set2)))
+    print("=========================== union of sets =========================\n user_defined_set1 {0} user_defined_set2 {1} union of sets {2}".format(user_defined_set1,user_defined_set2,union_set(user_defined_set1,user_defined_set2)))
     print("=========================== program finish here =============================")
     loggerfile.Logger("info","find union successfully")
 

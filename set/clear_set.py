@@ -10,17 +10,17 @@ import os
 sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 
-def clear_set(set1):
+def clear_set(user_defind_set):
     """
     Description:
         this function is define for clear set
     Parameter:
-        set1 (set) : user defined set
+        user_defind_set (set) : user defined set
     Return:
         set (set) : empty set
     """
-    set1.clear()
-    return set1
+    user_defind_set.clear()
+    return user_defind_set
 
 def main():
     """
@@ -31,10 +31,10 @@ def main():
     Return:
         None
     """
-    set1_old={0,1,2,3}
-    set1={0,1,2,3}
+    user_defind_set_old={0,1,2,3}
+    user_defind_set={0,1,2,3}
     try:
-        print("=========================================================\n set1 before clear {0} and after clear {1}".format(set1_old,clear_set(set1)))
+        print("=========================================================\n user_defind_set before clear {0} and after clear {1}".format(user_defind_set_old,clear_set(user_defind_set)))
         print("=========================== program finish here =============================")
         loggerfile.Logger("info","clear successfully")
     except Exception as error:

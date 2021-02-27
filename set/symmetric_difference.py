@@ -10,18 +10,18 @@ import os
 sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 
-def symmetric_difference_set(set1,set2):
+def symmetric_difference_set(user_defined_set1,user_defined_set2):
     """
     Description:
         this function is define for find difference of two sets
     Parameter:
-        set1 (set) : first set
-        set2 (set) : second set
+        user_defined_user_defined_set1 (set) : first set
+        user_defined_set2 (set) : second set
     Return:
-        set3 (set) : symmetric difference of set1,set2
+        set_difference (set) : symmetric difference of user_defined_user_defined_set1,user_defined_set2
     """
-    set3=set1.symmetric_difference(set2)
-    return set3
+    set_difference=user_defined_set1.symmetric_difference(user_defined_set2)
+    return set_difference
 
 def main():
     """
@@ -32,10 +32,10 @@ def main():
     Return:
         None
     """
-    set1={0,1,2,3}
-    set2={0,1,2,7,8,9}
+    user_defined_set1={0,1,2,3}
+    user_defined_set2={0,1,2,7,8,9}
     try:
-        print("=========================================================\n set1 {0} set2 {1} symmetric difference of sets {2}".format(set1,set2,symmetric_difference_set(set1,set2)))
+        print("=========================================================\n user_defined_user_defined_set1 {0} user_defined_set2 {1} symmetric difference of sets {2}".format(user_defined_set1,user_defined_set2,symmetric_difference_set(user_defined_set1,user_defined_set2)))
         print("=========================== program finish here =============================")
         loggerfile.Logger("info","find difference successfully")
     except Exception as error:

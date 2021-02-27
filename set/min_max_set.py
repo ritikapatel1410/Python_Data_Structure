@@ -10,18 +10,18 @@ import os
 sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 
-def min_max_set(set1):
+def min_max_set(user_defined_set):
     """
     Description:
         this function is define for find min and max of set
     Parameter:
-        set1 (set) : user defined set
+        user_defined_set (set) : user defined set
     Return:
         minimum (int) : min value of set
         maximum (int) : max value of set
     """
-    minimum=min(set1)
-    maximum=max(set1)
+    minimum=min(user_defined_set)
+    maximum=max(user_defined_set)
     return minimum,maximum
 
 def main():
@@ -33,10 +33,10 @@ def main():
     Return:
         None
     """
-    set1={0,1,2,3}
+    user_defined_set={0,1,2,3}
     try:
-        minimum,maximum=min_max_set(set1)
-        print("=========================================================\n set : {0} min value : {1} max value : {2}".format(set1,minimum,maximum))
+        minimum,maximum=min_max_set(user_defined_set)
+        print("=========================================================\n set : {0} min value : {1} max value : {2}".format(user_defined_set,minimum,maximum))
         print("=========================== program finish here =============================")
         loggerfile.Logger("info","min max find successfully")
     except Exception as error:

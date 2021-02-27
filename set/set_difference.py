@@ -10,17 +10,17 @@ import os
 sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 
-def difference_set(set1,set2):
+def difference_set(user_defined_set1,user_defined_set2):
     """
     Description:
         this function is define for find difference of two sets
     Parameter:
-        set1 (set) : first set
-        set2 (set) : second set
+        user_defined_set1 (set) : first set
+        user_defined_set2 (set) : second set
     Return:
-        set3 (set) : difference of set1,set2
+        set3 (set) : difference of user_defined_set1,user_defined_set2
     """
-    set3=set1.difference(set2)
+    set3=user_defined_set1.difference(user_defined_set2)
     return set3
 
 def main():
@@ -32,11 +32,11 @@ def main():
     Return:
         None
     """
-    set1={0,1,2,3}
-    set2={0,1,2,7,8,9}
+    user_defined_set1={0,1,2,3}
+    user_defined_set2={0,1,2,7,8,9}
     try:
-        print("======================================================\n set1 {0} set2 {1} difference of sets {2}".format(set1,set2,difference_set(set1,set2)))
-        print("=====================================================\n set2 {1} set1 {0} difference of sets {2}".format(set1,set2,difference_set(set2,set1)))
+        print("======================================================\n user_defined_set1 {0} user_defined_set2 {1} difference of sets {2}".format(user_defined_set1,user_defined_set2,difference_set(user_defined_set1,user_defined_set2)))
+        print("=====================================================\n user_defined_set2 {1} user_defined_set1 {0} difference of sets {2}".format(user_defined_set1,user_defined_set2,difference_set(user_defined_set2,user_defined_set1)))
         print("=========================== program finish here =============================")
         loggerfile.Logger("info","find difference successfully")
     except Exception as error:

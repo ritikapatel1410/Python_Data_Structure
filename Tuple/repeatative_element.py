@@ -11,22 +11,25 @@ sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 from copy import deepcopy
 
-def repeative_tuple(Tuple):
+def repeative_tuple(given_tuple):
     """
     Description:
         this function is define for repeated items of a tuple
     Parameter:
-        Tuple (Tuple) : user defined tuple
+        given_tuple (tuple) : user defined tuple
     Return:
-        repeated_element (Tuple) : list of repeated items of a tuple
+        repeated_element (tuple) : list of repeated items of a tuple
     """
     repeated_element=[]
     index=1
-    for items in Tuple[:-1]:
-        if items in Tuple[index:]:
+    for items in given_tuple[:-1]:
+        if items in given_tuple[index:]:
             repeated_element.append(items)
         index+=1
-    return tuple(repeated_element)
+    if(len(repeated_element)>0):
+        return tuple(repeated_element)
+    else:
+        return "repeated element not found"
 
 
 def main():
@@ -38,10 +41,15 @@ def main():
     Return:
         None
     """
-    Tuple=(1,2,3,1,4,2,3,5)
+    given_tuple=(1,2,3,1,4,2,3,5)
     try:
-        print("========================== repeatative element tuple here ==========================\nrepeative element tuple of : {0}  is : {1}".format(Tuple,repeative_tuple(Tuple)))
-        loggerfile.Logger("info","successfully get repeative element of tuple")
+        return_repeative_element=repeative_tuple(given_tuple)
+        if(return_repeative_element!="repeated element not found"):
+            print("========================== repeatative element tuple here ==========================\nrepeative element tuple of : {0}  is : {1}".format(given_tuple,repeative_tuple(given_tuple)))
+            loggerfile.Logger("info","successfully get repeative element of tuple")
+        else:
+            print("===========================================\nrepeative element tuple of : {0}  is : {1}".format(given_tuple,repeative_tuple(given_tuple)))
+            loggerfile.Logger("info","successfully get repeative element of tuple")
     except ValueError as error:
         loggerfile.Logger("error","{0} error occured".format(error))
     except Exception as error:

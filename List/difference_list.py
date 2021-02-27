@@ -10,18 +10,18 @@ import os
 sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 
-def difference_list(List1,List2):
+def difference_list(user_defined_list1,user_defined_list2):
     """
     Description:
         this function is define for get the difference between the two lists 
     Parameter:
-        List1 (list) : user defined list
-        List2 (list) : use defined list
+        user_defined_list1 (list) : user defined list
+        user_defined_list2 (list) : use defined list
     Return:
-        List3 (list) : difference of List1 and List2
+        difference_list (list) : difference of user_defined_list1 and user_defined_list2
     """
-    List3=[set(List1).symmetric_difference(set(List2))]
-    return List3
+    difference_list=[set(user_defined_list1).symmetric_difference(set(user_defined_list2))]
+    return difference_list
 
 def main():
     """
@@ -32,10 +32,10 @@ def main():
     Return:
         None
     """
-    List1=[1,2,3]
-    List2=[1,2,7,8]
+    user_defined_list1=[1,2,3]
+    user_defined_list2=[1,2,7,8]
     try:
-        print("=========================================================\n difference of {0} and {1} is : {2}".format(List1,List2,difference_list(List1,List2)))
+        print("=========================================================\n difference of {0} and {1} is : {2}".format(user_defined_list1,user_defined_list2,difference_list(user_defined_list1,user_defined_list2)))
         loggerfile.Logger("info","find difference of list successfully")
     except Exception as error:
         loggerfile.Logger("error","{0} error occured".format(error))

@@ -10,18 +10,18 @@ import os
 sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 
-def append_list(List1,List2):
+def append_list(user_defind_list1,user_defind_list2):
     """
     Description:
         this function is define for append a list to the second list 
     Parameter:
-        List1 (list) : user defined list
-        List2 (list) : use defined list
+        user_defind_list1 (list) : user defined list
+        user_defind_list2 (list) : use defined list
     Return:
-        List3 (list) : append list
+        user_defind_list3 (list) : append list
     """
-    List3=List1+List2
-    return List3
+    user_defind_list3=user_defind_list1+user_defind_list2
+    return user_defind_list3
 
 def main():
     """
@@ -32,10 +32,10 @@ def main():
     Return:
         None
     """
-    List1=[1,2,3]
-    List2=[1,2,7,8]
+    user_defind_list1=[1,2,3]
+    user_defind_list2=[1,2,7,8]
     try:
-        print("=========================================================\n append of {0} and {1} is : {2}".format(List1,List2,append_list(List1,List2)))
+        print("=========================================================\n append of {0} and {1} is : {2}".format(user_defind_list1,user_defind_list2,append_list(user_defind_list1,user_defind_list2)))
         loggerfile.Logger("info","append list successfully")
     except Exception as error:
         loggerfile.Logger("error","{0} error occured".format(error))

@@ -10,17 +10,17 @@ import os
 sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 
-def duplicate_list(List):
+def duplicate_list(user_defind_list):
     """
     Description:
         this function is define for create duplicate element of list
     Parameter:
-        List (list) : user defined list
+        user_defind_list (list) : user defined list
     Return:
-        List_new (list) : duplicate list
+        clone_user_defind_list (list) : duplicate list
     """
-    List_new=list(List)
-    return List_new
+    clone_user_defind_list=list(user_defind_list)
+    return clone_user_defind_list
 
 def main():
     """
@@ -31,7 +31,7 @@ def main():
     Return:
         None
     """
-    List=[]
+    user_defind_list=[]
     while True:
         try:
             size_of_list=int(input("===================================================================\nenter size of list: "))
@@ -39,13 +39,13 @@ def main():
                 while True:
                     try:
                         value=int(input("enter index {0} element: ".format(element)))
-                        List.append(value)
+                        user_defind_list.append(value)
                         break
                     except ValueError as error:
                         loggerfile.Logger("error","{0} error occured".format(error))
                     except Exception as error:
                         loggerfile.Logger("error","{0} error occured".format(error))
-            print("====================================================\noriginal list : {0} duplicate list : {1}".format(List,duplicate_list(List)))
+            print("====================================================\noriginal list : {0} duplicate list : {1}".format(user_defind_list,duplicate_list(user_defind_list)))
             loggerfile.Logger("info","successfully create duplicate list")
             break
         except ValueError as error:

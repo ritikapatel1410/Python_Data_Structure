@@ -13,16 +13,16 @@ import loggerfile
 
 
 
-def min_list(List):
+def min_list(user_defined_list):
     """
     Description:
         this function is define for smallest number of list
     Parameter:
-        List (list) : user defined list
+        user_defined_list (list) : user defined list
     Return:
-        minimum value of List
+        minimum value of user_defined_list
     """
-    return min(List)
+    return min(user_defined_list)
 
 def main():
     """
@@ -33,7 +33,7 @@ def main():
     Return:
         None
     """
-    List=[]
+    user_defined_list=[]
     while True:
         try:
             size_of_list=int(input("===================================================================\nenter size of list: "))
@@ -41,13 +41,13 @@ def main():
                 while True:
                     try:
                         value=int(input("enter index {0} element: ".format(element)))
-                        List.append(value)
+                        user_defined_list.append(value)
                         break
                     except ValueError as error:
                         loggerfile.Logger("error","{0} error occured".format(error))
                     except Exception as error:
                         loggerfile.Logger("error","{0} error occured".format(error))
-            print("====================================================\nmin value of list {0} is : {1}".format(List,min_list(List)))
+            print("====================================================\nmin value of list {0} is : {1}".format(user_defined_list,min_list(user_defined_list)))
             loggerfile.Logger("info","successfully find min value of list")
             break
         except ValueError as error:

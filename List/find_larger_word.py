@@ -10,17 +10,17 @@ import os
 sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 
-def string_list(List,n):
+def string_list(user_created_list,n):
     """
     Description:
         this function is define for find list of string which are larger than given value
     Parameter:
-        List (list) : user defined list
+        user_created_list (list) : user defined list
     Return:
         word (list) : list of string which are larger than given value
     """
     word=[]
-    for string in List:
+    for string in user_created_list:
         if(len(string)>n):
             word.append(string)
     return word
@@ -34,7 +34,7 @@ def main():
     Return:
         None
     """
-    List=[]
+    user_created_list=[]
     while True:
         try:
             size_of_list=int(input("===================================================================\nenter size of list: "))
@@ -42,9 +42,9 @@ def main():
             for element in range(size_of_list):
                 while True:
                         value=input("enter index {0} element: ".format(element))
-                        List.append(value)
+                        user_created_list.append(value)
                         break
-            print("====================================================\nlist {0} list of word which are greater then {1}  : {2}".format(List,n,string_list(List,n)))
+            print("====================================================\nlist {0} list of word which are greater then {1}  : {2}".format(user_created_list,n,string_list(user_created_list,n)))
             loggerfile.Logger("info","successfully find the list of word")
             break
         except ValueError as error:

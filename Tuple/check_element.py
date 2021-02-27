@@ -10,17 +10,17 @@ import os
 sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 
-def exist_element(Tuple,element):
+def exist_element(given_tuple,element):
     """
     Description:
         this function is define for check whether an element exists within a tuple
     Parameter:
-        Tuple (Tuple) : user defined tuple
+        given_tuple (tuple) : user defined tuple
     Return:
         True (boolean) : if exist
         False (boolean) : if not exist
     """
-    if element in Tuple:
+    if element in given_tuple:
         return True
     else:
         return False
@@ -35,10 +35,10 @@ def main():
     Return:
         None
     """
-    Tuple=(1,2,3,4,5,6,7,8,9,10)
+    given_tuple=(1,2,3,4,5,6,7,8,9,10)
     try:
         element=int(input("=================================================\nenter element: "))
-        print("========================== repeatative element tuple here ==========================\nrelement {0} is in {1} ? {2}".format(element,Tuple,exist_element(Tuple,element)))
+        print("========================== repeatative element tuple here ==========================\nelement {0} is in {1} ? {2}".format(element,given_tuple,exist_element(given_tuple,element)))
         loggerfile.Logger("info","successfully check element in tuple")
     except ValueError as error:
         loggerfile.Logger("error","{0} error occured".format(error))

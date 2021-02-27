@@ -10,17 +10,17 @@ import os
 sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 
-def creat_tuple(List):
+def creat_tuple(given_list):
     """
     Description:
         this function is define for create a tuple of different data type
     Parameter:
-        List (list) : user defined list
+        given_list (list) : user defined list
     Return:
-        Tuple (tuple) : created tuple
+        convert_tuple (tuple) : created tuple
     """
-    Tuple=tuple(List)
-    return Tuple
+    convert_tuple=tuple(given_list)
+    return convert_tuple
 
 def main():
     """
@@ -31,10 +31,10 @@ def main():
     Return:
         None
     """
-    List=["tuple", False, 3.2, 1]
+    given_list=["tuple", False, 3.2, 1]
     while True:
         try:
-            print("====================================================\ncreated list : {0} converted into tuple is : {1}".format(List,creat_tuple(List)))
+            print("====================================================\ncreated list : {0} converted into tuple is : {1}".format(given_list,creat_tuple(given_list)))
             loggerfile.Logger("info","successfully create tuple with different data type successfully")
             break
         except ValueError as error:

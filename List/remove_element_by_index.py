@@ -10,19 +10,19 @@ import os
 sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 
-def delete_by_index(List1):
+def delete_by_index(user_defined_list):
     """
     Description:
         this function is define for delete specific index element
     Parameter:
-        List1 (list) : user defined list
+        user_defined_list (list) : user defined list
     Return:
-        List1 (list) : list after delete element
+        user_defined_list (list) : list after delete element
     """
-    del List1[0]
-    del List1[3]
-    del List1[3]
-    return List1
+    del user_defined_list[0]
+    del user_defined_list[3]
+    del user_defined_list[3]
+    return user_defined_list
 
 def main():
     """
@@ -33,10 +33,10 @@ def main():
     Return:
         None
     """
-    List1=['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
-    List2=list(List1)
+    user_defined_list=['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+    clone_user_defined_list=list(user_defined_list)
     try:
-        print("=========================================================================================\nList before {0} and after delete element: {1}".format(List2,delete_by_index(List1)))
+        print("=========================================================================================\nList before {0} and after delete element: {1}".format(clone_user_defined_list,delete_by_index(user_defined_list)))
         loggerfile.Logger("info","deleted element successfully")
     except Exception as error:
         loggerfile.Logger("error","{0} error occured".format(error))

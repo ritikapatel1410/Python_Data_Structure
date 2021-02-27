@@ -11,16 +11,16 @@ sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 
 
-def sort_list(List):
+def sort_list(user_created_list):
     """
     Description:
         this function is define for sorted list by last element of tuple
     Parameter:
-        List (list) : user defined list
+        user_created_list (list) : user defined list
     Return:
         sorted_List (list) : sorted List 
     """
-    sorted_List=[(element1,element2) for element1,element2 in sorted(List, key=lambda item:item[1])]
+    sorted_List=[(element1,element2) for element1,element2 in sorted(user_created_list, key=lambda item:item[1])]
     return sorted_List
 
 def main():
@@ -32,7 +32,7 @@ def main():
     Return:
         None
     """
-    List=[]
+    user_created_list=[]
     while True:
         try:
             size_of_list=int(input("===================================================================\nenter size of list: "))
@@ -41,13 +41,13 @@ def main():
                     try:
                         element1=int(input("enter index {0} and tuple oth element: ".format(element)))
                         element2=int(input("enter index {0} and tuple 1st element: ".format(element)))
-                        List.append((element1,element2))
+                        user_created_list.append((element1,element2))
                         break
                     except ValueError as error:
                         loggerfile.Logger("error","{0} error occured".format(error))
                     except Exception as error:
                         loggerfile.Logger("error","{0} error occured".format(error))
-            print("====================================================\nList before sort {0} after sort : {1}".format(List,sort_list(List)))
+            print("====================================================\nList before sort {0} after sort : {1}".format(user_created_list,sort_list(user_created_list)))
             loggerfile.Logger("info","successfully sorted list")
             break
         except ValueError as error:

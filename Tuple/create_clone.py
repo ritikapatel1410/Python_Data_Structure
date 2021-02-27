@@ -11,16 +11,16 @@ sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 from copy import deepcopy
 
-def clone_tuple(Tuple):
+def clone_tuple(given_tuple):
     """
     Description:
         this function is define for create the colon of a tuple
     Parameter:
-        Tuple (list) : user defined tuple
+        given_tuple (tuple) : user defined tuple
     Return:
         duplicate_tuple (tuple) : clone of given tuple
     """
-    duplicate_tuple=deepcopy(Tuple)
+    duplicate_tuple=deepcopy(given_tuple)
     return duplicate_tuple
 
 def main():
@@ -32,12 +32,12 @@ def main():
     Return:
         None
     """
-    Tuple=("Vijay", "patidar", 28, "B.tech",[])
+    given_tuple=("Vijay", "patidar", 28, "B.tech",[])
     try:
-        duplicate_Tuple=clone_tuple(Tuple)
-        Tuple[4].append("iit roorkee")
-        print("========================== clone of Tuple here ==========================\ncopy of Tuple : {0}  is : {1}".format(Tuple,duplicate_Tuple))
-        loggerfile.Logger("info","successfully clone of Tuple created")
+        duplicate_Tuple=clone_tuple(given_tuple)
+        given_tuple[4].append("iit roorkee")
+        print("========================== clone of given_tuple here ==========================\ncopy of given_tuple : {0}  is : {1}".format(given_tuple,duplicate_Tuple))
+        loggerfile.Logger("info","successfully clone of given_tuple created")
     except ValueError as error:
         loggerfile.Logger("error","{0} error occured".format(error))
     except Exception as error:

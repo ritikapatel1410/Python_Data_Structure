@@ -11,16 +11,16 @@ sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 import itertools
 
-def permutation_list(List1):
+def permutation_list(user_defined_list):
     """
     Description:
         this function is define for find permutation of given list
     Parameter:
-        List1 (list) : user defined list
+        user_defined_list (list) : user defined list
     Return:
         True (boolean) : if function works
     """
-    print(list(itertools.permutations(List1)))
+    print(list(itertools.permutations(user_defined_list)))
     return True
 
 def main():
@@ -32,10 +32,10 @@ def main():
     Return:
         None
     """
-    List1=[1,2,3]
+    user_defined_list=[1,2,3]
     try:
         print("=========================================================================================")
-        permutation_list(List1)
+        permutation_list(user_defined_list)
         loggerfile.Logger("info","find permutation successfully")
     except Exception as error:
         loggerfile.Logger("error","{0} error occured".format(error))

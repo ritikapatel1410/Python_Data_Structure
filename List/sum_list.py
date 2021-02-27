@@ -13,16 +13,16 @@ import loggerfile
 
 
 
-def sum_list(List):
+def sum_list(user_list):
     """
     Description:
         this function is define for sum of element of list
     Parameter:
-        List (list) : user defined list
+        user_list (list) : user defined list
     Return:
         sum of list element 
     """
-    return sum(List)
+    return sum(user_list)
 
 def main():
     """
@@ -33,7 +33,7 @@ def main():
     Return:
         None
     """
-    List=[]
+    user_list=[]
     while True:
         try:
             size_of_list=int(input("===================================================================\nenter size of list: "))
@@ -41,13 +41,13 @@ def main():
                 while True:
                     try:
                         value=int(input("enter index {0} element: ".format(element)))
-                        List.append(value)
+                        user_list.append(value)
                         break
                     except ValueError as error:
                         loggerfile.Logger("error","{0} error occured".format(error))
                     except Exception as error:
                         loggerfile.Logger("error","{0} error occured".format(error))
-            print("====================================================\nsum of list {0} elements is : {1}".format(List,sum_list(List)))
+            print("====================================================\nsum of list {0} elements is : {1}".format(user_list,sum_list(user_list)))
             break
         except ValueError as error:
             loggerfile.Logger("error","{0} error occured".format(error))

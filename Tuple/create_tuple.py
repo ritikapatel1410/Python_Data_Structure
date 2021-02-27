@@ -10,17 +10,17 @@ import os
 sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 
-def creat_tuple(List):
+def creat_tuple(given_list):
     """
     Description:
         this function is define for create a tuple
     Parameter:
-        List (list) : user defined list
+        given_list (list) : user defined list
     Return:
-        Tuple (tuple) : created tuple
+        convert_tuple (tuple) : created tuple
     """
-    Tuple=tuple(List)
-    return Tuple
+    convert_tuple=tuple(given_list)
+    return convert_tuple
 
 def main():
     """
@@ -31,7 +31,7 @@ def main():
     Return:
         None
     """
-    List=[]
+    given_list=[]
     while True:
         try:
             size_of_list=int(input("===================================================================\nenter size of list: "))
@@ -39,13 +39,13 @@ def main():
                 while True:
                     try:
                         value=int(input("enter index {0} element: ".format(element)))
-                        List.append(value)
+                        given_list.append(value)
                         break
                     except ValueError as error:
                         loggerfile.Logger("error","{0} error occured".format(error))
                     except Exception as error:
                         loggerfile.Logger("error","{0} error occured".format(error))
-            print("====================================================\ncreated list : {0} converted into tuple is : {1}".format(List,creat_tuple(List)))
+            print("====================================================\ncreated list : {0} converted into tuple is : {1}".format(given_list,creat_tuple(given_list)))
             loggerfile.Logger("info","successfully create tupple successfully")
             break
         except ValueError as error:

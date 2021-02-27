@@ -10,19 +10,19 @@ import os
 sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 
-def remove_duplicate_element(List):
+def remove_duplicate_element(user_created_list):
     """
     Description:
         this function is define for emove duplicate element of list
     Parameter:
-        List (list) : user defined list
+        user_created_list (list) : user defined list
     Return:
         List_unique (list) : list which have only unique element
     """
-    List_unique=list(List)
+    List_unique=list(user_created_list)
     index=1
-    for element in List[:-1]:
-        if(element in List[index:]):
+    for element in user_created_list[:-1]:
+        if(element in user_created_list[index:]):
             List_unique.remove(element)
         index+=1
     return List_unique
@@ -36,7 +36,7 @@ def main():
     Return:
         None
     """
-    List=[]
+    user_created_list=[]
     while True:
         try:
             size_of_list=int(input("===================================================================\nenter size of list: "))
@@ -44,13 +44,13 @@ def main():
                 while True:
                     try:
                         value=int(input("enter index {0} element: ".format(element)))
-                        List.append(value)
+                        user_created_list.append(value)
                         break
                     except ValueError as error:
                         loggerfile.Logger("error","{0} error occured".format(error))
                     except Exception as error:
                         loggerfile.Logger("error","{0} error occured".format(error))
-            print("====================================================\nlist before {0} and after remove duplicates {1}".format(List,remove_duplicate_element(List)))
+            print("====================================================\nlist before {0} and after remove duplicates {1}".format(user_created_list,remove_duplicate_element(user_created_list)))
             loggerfile.Logger("info","successfully remove duplicate element")
             break
         except ValueError as error:

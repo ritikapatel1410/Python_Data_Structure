@@ -10,16 +10,16 @@ import os
 sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 
-def unpack_tuple(Tuple):
+def unpack_tuple(user_defined_tuple):
     """
     Description:
         this function is define for unpack a tuple in several variables
     Parameter:
-        Tuple (list) : user defined tuple
+        user_defined_tuple (list) : user defined tuple
     Return:
-        unpack_tuple (tuple) : unpack_tuple of given Tuple
+        unpack_tuple (tuple) : unpack_tuple of given user_defined_tuple
     """
-    (name,lastname,age,degree)=Tuple
+    (name,lastname,age,degree)=user_defined_tuple
     print("======================== Unpack Tuple Here ========================\nname : {0}\nlastname:{1}\nlastname:{2}\ndegree:{3}".format(name,lastname,lastname,degree))
     return True
 
@@ -32,9 +32,10 @@ def main():
     Return:
         None
     """
-    Tuple=("Vijay", "patidar", 28, "B.tech")
+    user_defined_tuple=("Vijay", "patidar", 28, "B.tech")
     try:
-        print("====================================================\nTuple : {0} after unpack is : {1}".format(Tuple,unpack_tuple(Tuple)))
+        print("====================================================\nuser_defined_tuple : {0} after unpack see below".format(user_defined_tuple))
+        unpack_tuple(user_defined_tuple)
         loggerfile.Logger("info","successfully create unpack tuple successfully")
     except ValueError as error:
         loggerfile.Logger("error","{0} error occured".format(error))

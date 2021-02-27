@@ -10,22 +10,24 @@ import os
 sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
 
-def remove_duplicate(List):
+def remove_duplicate(user_defined_list):
     """
     Description:
         this function is define for remove duplicates from a list of lists problem
     Parameter:
-        List (str) : user defined list
+        user_defined_list (str) : user defined list
     Return:
-       List1 (list) : unique value list
+       clone_user_defined_list (list) : unique value list
     """
-    List1=list(List)
+    check_duplicate=False
+    clone_user_defined_list=list(user_defined_list)
     index=1
-    for element in List[:-1]:
-        if(element in List[index:]):
-            List1.remove(element)
+    for element in user_defined_list[:-1]:
+        if(element in user_defined_list[index:]):
+            check_duplicate=True
+            clone_user_defined_list.remove(element)
         index+=1
-    return List1
+    return check_duplicate,clone_user_defined_list
    
 
 def main():
@@ -38,9 +40,13 @@ def main():
         None
     """
     try:
-        List=[[10, 20], [40], [30, 56, 25], [10, 20], [33], [40]]
-        print("=========================================================\n list {0} after deleted duplicate element : {1}".format(List,remove_duplicate(List)))
-        loggerfile.Logger("info","duplicate element deleted successfully")
+        user_defined_list=[[10, 20], [40], [30, 56, 25], [10, 20], [33], [40]]
+        check_duplicate,clone_user_defined_list=remove_duplicate(user_defined_list)
+        if(check_duplicate==True):
+            print("=========================================================\n user_defined_list {0} after deleted duplicate element : {1}".format(user_defined_list,clone_user_defined_list))
+        else:
+            print("==========================================================\n user_defined_list no duplicate element found")
+            loggerfile.Logger("info","duplicate element deleted successfully")
     except Exception as error:
         loggerfile.Logger("error","{0} error occured".format(error))
 

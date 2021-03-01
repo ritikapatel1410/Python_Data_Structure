@@ -19,7 +19,7 @@ class Test_validiate_email(unittest.TestCase):
     def test_valid_email(self):
         """
         Description:
-            This method define for test all case of valid_email method of validiate_name.py
+            This method define for test all case of valid_email method of validiate_email.py
         Parameter:
             None
         Return:

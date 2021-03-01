@@ -20,7 +20,7 @@ def valid_email(email_id):
     Return:
        if email id is valid then return valid email id else return invalid email id
     """
-    pattern=re.compile("^(abc).[a-z0-9]{1,}[@](bl)+[.](co)+[.]\w{2,3}")
+    pattern=re.compile("^(abc).[a-z0-9]{1,}[@](bl)+[.](co)+[.](in|com|org)$")
     if(pattern.match(email_id)):
         return "valid email id"
     else:

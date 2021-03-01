@@ -24,42 +24,42 @@ def main():
     Return:
        None
     """
-    while True:
-        try:
-            print("======================== Give Registration Permission=======================")
-            reg_permission=input("do want to registration? enter y or n: ")
-            if(reg_permission=="y"):
+    try:
+        print("======================== Give Registration Permission=======================")
+        reg_permission=input("do want to registration? enter y or n: ")
+        if(reg_permission=="y"):
+            while True:
                 print("============================= Give First Name ========================")
                 if(validiate_name.valid_first_name(validiate_name.input_name("first_name"))=="valid name"):
-                    print("============================= Give Last Name ========================")
-                    if(validiate_name.valid_last_name(validiate_name.input_name("last_name"))=="valid name"):
-                        print("============================= Give Email Id ========================")
-                        if(validiate_email.valid_email(validiate_email.input_email())=="valid email id"):
-                            print("============================= Mobile Number ========================")
-                            if(validiate_mobile_number.valid_mobile_number(validiate_mobile_number.input_mobile_no())=="valid mobile number"):
-                                print("============================= Give Password ========================")
-                                if(validiate_password.valid_password(validiate_password.input_password())=="Valid Password"):
-                                   loggerfile.Logger("info","user registered")
-                                   sys.exit()                
+                    while True:
+                        print("============================= Give Last Name ========================")
+                        if(validiate_name.valid_last_name(validiate_name.input_name("last_name"))=="valid name"):
+                            while True:
+                                print("============================= Give Email Id ========================")
+                                if(validiate_email.valid_email(validiate_email.input_email())=="valid email id"):
+                                    while True:
+                                        print("============================= Mobile Number ========================")
+                                        if(validiate_mobile_number.valid_mobile_number(validiate_mobile_number.input_mobile_no())=="valid mobile number"):
+                                            while True:
+                                                print("============================= Give Password ========================")
+                                                if(validiate_password.valid_password(validiate_password.input_password())=="Valid Password"):
+                                                    loggerfile.Logger("info","user registered")
+                                                    sys.exit()                
+                                                else:
+                                                    print("=======================================\ninvalid password id try again!!!")           
+                                        else:
+                                            print("====================================================\ninvalid mobile number id try again!!!")
                                 else:
-                                    print("=======================================\ninvalid password id try again!!!")
-                                    main()             
-                            else:
-                                print("====================================================\ninvalid mobile number id try again!!!")
-                                main()
+                                    print("===============================================================\ninvalid email id try again!!!")
                         else:
-                            print("===============================================================\ninvalid email id try again!!!")
-                            main()
-                    else:
-                        print("==================================================================\ninvalid last name try again!!!")
-                        main()
+                            print("==================================================================\ninvalid last name try again!!!")
                 else:
                     print("=========================================================================\ninvalid first name try again!!!")
-                    main()
-            elif(reg_permission=="n"):
-                sys.exit()
-        except Exception as error:
-            loggerfile.Logger("error","{0} error occured".format(error))
+
+        elif(reg_permission=="n"):
+            sys.exit()
+    except Exception as error:
+        loggerfile.Logger("error","{0} error occured".format(error))
 
 main() 
 

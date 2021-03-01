@@ -9,6 +9,7 @@ import sys
 import os
 sys.path.insert(0, os.path.abspath('LogFile'))
 import loggerfile
+import random
 
 def created_nested_list(user_defined_column,user_defind_row):
     """
@@ -20,7 +21,7 @@ def created_nested_list(user_defined_column,user_defind_row):
     Return:
         nested_list (list) : created nested list
     """
-    nested_list=[[0 for colomn in range(user_defined_column)] for row in range(user_defind_row)]
+    nested_list=[[random.randint(0,(user_defined_column*user_defind_row)) for colomn in range(user_defined_column)] for row in range(user_defind_row)]
     return nested_list
 
 def main():

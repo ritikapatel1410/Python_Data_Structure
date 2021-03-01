@@ -21,16 +21,7 @@ def valid_password(password):
        if password is valid then return valid password else return invalid password
     """
     while True:   
-        if (len(password)!=8): 
-            flag = -1
-            break
-        elif not re.search("[A-Z]", password): 
-            flag = -1
-            break
-        elif not re.search("[0-9]", password): 
-            flag = -1
-            break
-        elif not len(re.findall("[\W_]", password))==1: 
+        if ((len(password)!=8) or (not re.search("[A-Z]", password)) or (not re.search("[0-9]", password)) or (not len(re.findall("[\W_]", password))==1)): 
             flag = -1
             break
         else: 
